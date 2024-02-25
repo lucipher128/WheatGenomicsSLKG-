@@ -1,0 +1,17 @@
+TODO: 
+   #Pour author :
+   hindex et h10index => faut chercher le type. ????????
+
+DONE:
+   #Pour article :
+   Ajouter cited_by => touts les articles qui citent cet article
+   Ajouter le lien entre un article et un author.
+   #Pour author :
+   si identifier est null ne rien mettre
+   #Pour institution :
+   ajouter Type en tant que schema:Category  ou schema:Organisation si education
+   Last_Known_Institution => schema:organization  ou plusieurs. (Aziz a ajouté une classe dans les annotations)
+   ajouter Country Code (iso2) as schema:adressCountry  
+IMPOSSIBLE:
+   #Pour author :
+   rdfs:seeAlso wikipédia & wikidata

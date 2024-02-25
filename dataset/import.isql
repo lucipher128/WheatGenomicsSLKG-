@@ -1,0 +1,24 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg>;
+SPARQL CLEAR GRAPH  <http://ns.inria.fr/d2kab/ontology/wto/v3>;
+SPARQL CLEAR GRAPH  <http://ns.inria.fr/d2kab/graph/alignments-fcu-taxref>;
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/dataset_wheatgenomicsslkg/named-entites', 'd2kab.ttl',                  'http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg');
+ld_dir ('/dataset_wheatgenomicsslkg/named-entites', 'result_annotation.ttl',      'http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg');
+ld_dir ('/dataset_wheatgenomicsslkg/named-entites', 'result_entities.ttl',        'http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg');
+ld_dir ('/dataset_wheatgenomicsslkg/named-entites', 'result_relation.ttl',        'http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg');
+
+
+ld_dir ('/dataset_wheatgenomicsslkg/articles/enlarged_dataset/output/authors',      '*.ttl',               'http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg');
+ld_dir ('/dataset_wheatgenomicsslkg/articles/enlarged_dataset/output/enlarged_articles',      '*.ttl',               'http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg');
+ld_dir ('/dataset_wheatgenomicsslkg/articles/enlarged_dataset/output/organizations',      '*.ttl',               'http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg');
+
+ld_dir ('/dataset_wheatgenomicsslkg/WTO-v3.0',      'WTO*.ttl',                   'http://ns.inria.fr/d2kab/ontology/wto/v3');
+ld_dir ('/dataset_wheatgenomicsslkg/alignements',   'alignements-taxref-fcu.ttl', 'http://ns.inria.fr/d2kab/graph/alignments-fcu-taxref');
+
+rdf_loader_run();
+checkpoint;
+
+SELECT * FROM DB.DBA.load_list;
+exit;

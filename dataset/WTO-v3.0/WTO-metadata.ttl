@@ -1,0 +1,37 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dct: <http://purl.org/dct/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix omv: <http://omv.ontoware.org/2005/05/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+
+<http://opendata.inrae.fr/wto>
+  a owl:Ontology, rdfs:Resource ;
+  vann:preferredNamespaceUri <http://opendata.inrae.fr/wto/v3.0> ;
+  vann:preferredNamespacePrefix "wto" ;
+  dct:title "Wheat Trait and Phenotype Ontology"@en ;
+  dct:description "Wheat Trait Ontology is an ontology of wheat traits and environmental factors that affect these traits. They include resistance to disease, development, nutrition, bread quality, etc. Environmental factors include biotic and abiotic factors. An alternative title is the Wheat Phenotype Ontology."@en ;
+  dct:subject <http://data.agroportal.lirmm.fr/categories/TRAITS>, <http://aims.fao.org/aos/agrovoc/c_5956> ;
+  foaf:primaryTopic <http://data.agroportal.lirmm.fr/categories/TRAITS>, <http://aims.fao.org/aos/agrovoc/c_5956> ;
+  dct:license <https://spdx.org/licenses/etalab-2.0> ;
+  schema:license <https://spdx.org/licenses/etalab-2.0> ;
+  dct:publisher [
+    a schema:Organization ;
+    foaf:name "INRA" ;
+    foaf:homepage <http://www.inrae.fr/>
+  ] ;
+  omv:hasOntologyLanguage <http://www.w3.org/2002/07/owl> ;
+  omv:hasOntologySyntax <http://www.w3.org/2002/07/owl> ;
+  bibo:status "draft" ;
+  owl:versionIRI <http://opendata.inrae.fr/wto/v3.0> ;
+  owl:versionInfo "3.0" ;
+  dct:replaces "2.2.3q" ;
+  owl:priorVersion "http://data.agroportal.lirmm.fr/ontologies/WHEATPHENOTYPE/submissions/8/download?apikey=1de0a270-29c5-4dda-b043-7c3580628cd5" ;
+  dct:issued "2022-02-18" ;
+  schema:keywords "information extraction, corpus annotation, natural language processing, ontology building, biology, genetics"@en ;
+  bibo:doi <https://fairsharing.org/FAIRsharing.k7NfCn> ;
+  foaf:homepage <https://doi.org/10.15454/1.4382637738008071E12> ;
+  dct:creator "Claire Nédellec, Thierry Marcel, Pierre Sourdille" ;
+  dct:contributor "Claire Nédellec, Thierry Marcel, Pierre Sourdille, Nadia Yacoubi Ayadi, Catherine Faron" .

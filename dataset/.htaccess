@@ -1,0 +1,23 @@
+RewriteEngine On
+
+RewriteCond "%{HTTP_ACCEPT}" "text/html" [nocase]
+RewriteRule "^(.*)$" "http://d2kab.i3s.unice.fr/describe/?url=http://ns.inria.fr/d2kab/$1" [R=303,L]
+
+RewriteCond "%{HTTP_ACCEPT}" "text/turtle" [nocase]
+RewriteRule "^(.*)$" "http://d2kab.i3s.unice.fr/sparql?query=define+sql:describe-mode+'CBD'+DESCRIBE+<http://ns.inria.fr/d2kab/$1>&output=text/turtle" [R=303,L]
+
+RewriteCond "%{HTTP_ACCEPT}" "text/plain" [nocase]
+RewriteRule "^(.*)$" "http://d2kab.i3s.unice.fr/sparql?query=define+sql:describe-mode+'CBD'+DESCRIBE+<http://ns.inria.fr/d2kab/$1>&output=text/plain" [R=303,L]
+
+RewriteCond "%{HTTP_ACCEPT}" "application/json" [nocase]
+RewriteRule "^(.*)$" "http://d2kab.i3s.unice.fr/sparql?query=define+sql:describe-mode+'CBD'+DESCRIBE+<http://ns.inria.fr/d2kab/$1>&output=application/json" [R=303,L]
+
+RewriteCond "%{HTTP_ACCEPT}" "application/rdf\+json" [nocase]
+RewriteRule "^(.*)$" "http://d2kab.i3s.unice.fr/sparql?query=define+sql:describe-mode+'CBD'+DESCRIBE+<http://ns.inria.fr/d2kab/$1>&output=application/rdf\%2bjson" [NE,R=303,L]
+
+RewriteCond "%{HTTP_ACCEPT}" "application/ld\+json" [nocase]
+RewriteRule "^(.*)$" "http://d2kab.i3s.unice.fr/sparql?query=define+sql:describe-mode+'CBD'+DESCRIBE+<http://ns.inria.fr/d2kab/$1>&output=application/ld\%2bjson" [NE,R=303,L]
+
+RewriteCond "%{HTTP_ACCEPT}" "application/rdf\+xml" [nocase]
+RewriteRule "^(.*)$" "http://d2kab.i3s.unice.fr/sparql?query=define+sql:describe-mode+'CBD'+DESCRIBE+<http://ns.inria.fr/d2kab/$1>&output=application/rdf\%2bxml" [NE,R=303,L]
+

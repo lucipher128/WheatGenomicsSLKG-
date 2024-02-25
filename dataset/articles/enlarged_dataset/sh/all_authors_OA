@@ -1,0 +1,6 @@
+#!/bin/bash
+count=0
+while IFS= read -r line; do
+    res=$(curl -s $line)
+    echo $res | jq '.authorships[].author.id' >> ../data/new_auth_OA.data
+done < ../data/works_OA_req_pmid.data

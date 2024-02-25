@@ -1,0 +1,8 @@
+#!/bin/bash
+count=0
+while IFS= read -r line; do
+    count=$((count + 1))
+    echo $count
+    res=$(curl -s $line)
+    echo $res >> y
+done < authors_OA_last_req
