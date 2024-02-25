@@ -1,0 +1,12 @@
+.cache
+docker_volume/
+dataset/articles/enlarged_dataset/extr
+.classpath
+.project
+*checkpoint.ipynb
+.settings/
+.metadata/
+.DS_Store
+*~
+*.bak
+__pycache__
